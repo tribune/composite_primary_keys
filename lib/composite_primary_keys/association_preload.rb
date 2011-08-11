@@ -43,6 +43,7 @@ module CompositePrimaryKeys
 
         def preload_belongs_to_association(records, reflection, preload_options={})
           return if records.first.send("loaded_#{reflection.name}?")
+          return super if Array(reflection.klass.primary_key).size == 1
           options = reflection.options
           
           ids = Array.new
