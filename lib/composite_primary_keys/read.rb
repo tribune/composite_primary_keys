@@ -1,7 +1,7 @@
 module ActiveRecord
   module AttributeMethods
     module Read
-      def read_attribute(attr_name)
+      def _read_attribute(attr_name)
         attr_name = attr_name.to_s
         # CPK
         # attr_name = self.class.primary_key if attr_name == 'id'
